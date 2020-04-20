@@ -1,5 +1,14 @@
 Introduction
 ============
+ini menggunakan template adminLTE
+
+Fungsi dengan CRUD Dasar
+Add User, Edit User, Delete User
+
+
+
+Introduction
+============
 
 [![Build Status](https://img.shields.io/travis/ColorlibHQ/AdminLTE/master.svg)](https://travis-ci.org/ColorlibHQ/AdminLTE)
 [![npm version](https://img.shields.io/npm/v/admin-lte/latest.svg)](https://www.npmjs.com/package/admin-lte)

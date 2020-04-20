@@ -108,7 +108,7 @@ class registers extends CI_Controller
         if ($e) {
             die(json_encode($e));
         }
-
+        //enkripsi password dengan bcrypt
         $data = array(
             "name" => $name,
             "email" => $email,

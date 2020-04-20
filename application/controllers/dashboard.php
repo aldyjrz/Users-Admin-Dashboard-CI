@@ -10,9 +10,11 @@
 			parent::__construct();
 			$this->load->model('user_model');
 		}
+
+		//add comment
 		public function index()
 		{
-			$data['page_title'] = 'BSH Dashboard | Admin';
+			$data['page_title'] = 'BSH Dashboard';
 
 			$data['members'] = $this->user_model->semua();
 			$data['admin'] = $this->user_model->showadmin();

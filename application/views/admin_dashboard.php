@@ -6,6 +6,8 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0 text-dark">BSH Admin Dashboard</h1>
+            <h2>Hai, <?php echo $this->session->userdata("name"); ?></h2>
+          	<a href="<?php echo base_url('login/logout'); ?>">Logout</a>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
