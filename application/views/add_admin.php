@@ -39,9 +39,9 @@
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" name="password">
                   </div>
-                  
+</br>
                 
-                  <button type="submit" form="add-admin-form" class="btn btn-primary">Register</button>
+                  <button type="submit" form="add-admin-form" class="btn btn-primary">Login</button>
                  </div>
                 <!-- /.card-body -->
 

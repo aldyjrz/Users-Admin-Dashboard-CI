@@ -13,8 +13,9 @@ class Auth extends CI_Controller {
 		if($this->session->userdata('authenticated')) // Jika user sudah login (Session authenticated ditemukan)
 			redirect('page/welcome'); // Redirect ke page welcome
 
-		$this->load->view('login'); // Load view login.php
-	}
+			$data['page_title'] = 'BSH Dashboard';
+
+			view('base_template', 'login', $data);	}
 
 	public function login(){
 		$username = $this->input->post('email'); // Ambil isi dari inputan username pada form login

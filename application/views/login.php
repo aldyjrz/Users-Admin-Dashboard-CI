@@ -1,11 +1,28 @@
-<html>
-<head>
-	<title>Form Login</title>
-</head>
-<body>
-	<h1>Silahkan login terlebih dahulu...</h1>
+ 
+	 
+ 
+	<div class="content-wrapper" style="min-height: 1203.6px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>DataTables</h1>
+          </div>
+           
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
 
-	<div style="color: red;margin-bottom: 15px;">
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-12">
+        <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Login Admin</h3>
+              </div>
+			  <div style="color: red;margin-bottom: 15px;">
 		<?php
 		// Cek apakah terdapat session nama message
 		if($this->session->flashdata('message')){ // Jika ada
@@ -15,13 +32,30 @@
 	</div>
 
 	<form method="post" action="<?php echo base_url('index.php/auth/login') ?>">
-		<label>Username</label><br>
-		<input type="text" name="email" placeholder="email"><br><br>
+	<div class="card-body">
+        <div class="form-group">
+              <label for="name">Email</label>
+                  <input type="email" class="form-control" id="email" name="email">
+		</div>
+	</div>
+	 
+		<div class="card-body">
+			<div class="form-group">
+				<label for="name">Password</label>
+					<input type="password" class="form-control" id="password" name="password">
+					
+		<button type="submit"  class="btn btn-primary">Register</button>
+			</div>
+		</div>
 
-		<label>Password</label><br>
-		<input type="password" name="password" placeholder="Password"><br><br>
+					</form>
+	 
+				<!-- /.card -->
 
-		<button type="submit">Login</button>
-	</form>
-</body>
-</html>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
