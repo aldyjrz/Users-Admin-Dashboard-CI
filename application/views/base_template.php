@@ -269,8 +269,8 @@ $("#add-admin-form").submit(function(e) {
                 showSuccess("Success", json.redirect)
             }
         },
-        error: () => {
-            showError("error")
+        error: ( ) => {
+          showError("error")
         }
     })
 })

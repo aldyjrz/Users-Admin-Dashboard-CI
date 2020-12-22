@@ -22,7 +22,8 @@ class registers extends CI_Controller
     //add members 
     public function add()
     {
-        view('base_template', 'add_member');
+        $data['page_title'] = 'Add Member'; 
+        view('base_template', 'add_member', $data);
     }
 
 
@@ -44,19 +45,17 @@ class registers extends CI_Controller
         $type = $this->input->post('type');
 
         if (!$nama) {
-            $e['errors'][] = "ID KOSONG";
+            $e['errors'][] = "NAMA KOSONG";
         }
         if (!$email) {
-            $e['errors'][] = "ID KOSONG";
+            $e['errors'][] = "EMAIL KOSONG";
         }
         if (!$imei) {
-            $e['errors'][] = "ID KOSONG";
+            $e['errors'][] = "IMEI KOSONG";
         }
-        if (!$imsi) {
-            $e['errors'][] = "ID KOSONG";
-        }
+       
         if (!$type) {
-            $e['errors'][] = "ID KOSONG";
+            $e['errors'][] = "TYPE KOSONG";
         }
 
         if ($e) {
@@ -67,7 +66,6 @@ class registers extends CI_Controller
             "nama" => $nama,
             "email" => $email,
             "IMEI" => $imei,
-            "IMSI" => $imsi,
             "type" => $type
 
         );
@@ -112,7 +110,7 @@ class registers extends CI_Controller
         $data = array(
             "name" => $name,
             "email" => $email,
-            "password" =>password_hash($password, PASSWORD_BCRYPT),
+            "password" =>password_hash($password, PASSWORD_DEFAULT),
 
         );
 

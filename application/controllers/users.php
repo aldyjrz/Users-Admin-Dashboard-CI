@@ -96,13 +96,13 @@ class users extends CI_Controller
         $data = array(
             "name" => $name,
             "email" => $email,
-            "password" =>password_hash($password, PASSWORD_BCRYPT),
+            "password" =>password_hash($password, PASSWORD_DEFAULT),
         );
 
         $this->user_model->editadmin($data, $id);
 
 
-        $result['redirect'] = base_url("dashboard/view_admin/$id");
+        $result['redirect'] = base_url("users/view_admin/$id");
 
         die(json_encode($result));
     }
@@ -141,7 +141,7 @@ class users extends CI_Controller
         $this->user_model->edit($data, $id);
 
 
-        $result['redirect'] = base_url("dashboard/view/$id");
+        $result['redirect'] = base_url("users/view/$id");
 
         die(json_encode($result));
     }
@@ -161,7 +161,7 @@ class users extends CI_Controller
         }
 
         $this->user_model->hapus($id);
-        $result['redirect'] = base_url("dashboard/list_member");
+        $result['redirect'] = base_url("users/list_member");
 
         die(json_encode($result));
     }

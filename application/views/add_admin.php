@@ -25,7 +25,7 @@
                 <h3 class="card-title">Add Member</h3>
               </div>
                <!-- form start -->
-               <form id="add-admin-form" method="POST" action="<?=base_url("dashboard/tambah_admin")?>">
+               <form id="add-admin-form" method="POST" action="<?=base_url("registers/tambah_admin")?>">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="name">Name</label>

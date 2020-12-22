@@ -25,7 +25,7 @@
                 <h3 class="card-title">Add Member</h3>
               </div>
                <!-- form start -->
-               <form id="add-form" method="POST" action="<?=base_url("dashboard/tambah")?>">
+               <form id="add-form" method="POST" action="<?=base_url("registers/tambah")?>">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="nama">Name</label>
@@ -39,10 +39,7 @@
                     <label for="imei">IMEI</label>
                     <input type="number" class="form-control" id="imei" name="imei">
                   </div>
-                  <div class="form-group">
-                    <label for="imsi">IMSI</label>
-                    <input type="number" class="form-control" id="imsi" name="imsi">
-                  </div>
+                 
                   <div class="form-group">
                     <label for="type">Type</label>
                     <select name="type" class="form-control">

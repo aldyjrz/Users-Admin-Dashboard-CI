@@ -18,16 +18,19 @@ class Auth extends CI_Controller {
 			view('base_template', 'login', $data);	}
 
 	public function login(){
+	
 		$username = $this->input->post('email'); // Ambil isi dari inputan username pada form login
-		$password = password_hash($this->input->post('password'), PASSWORD_BCRYPT); // Ambil isi dari inputan password pada form login dan encrypt dengan md5
-
+		
+		$password = $this->input->post('password'); // Ambil isi dari inputan password pada form login dan encrypt dengan md5
 		$user = $this->UserModel->get($username); // Panggil fungsi get yang ada di UserModel.php
-
+		$hash = $user->password;
+		$this->session->set_flashdata('message', $password); // Buat session flashdata
+		
 		if(empty($user)){ // Jika hasilnya kosong / user tidak ditemukan
 			$this->session->set_flashdata('message', 'Username tidak ditemukan'); // Buat session flashdata
 			redirect('auth'); // Redirect ke halaman login
 		}else{
-			if($password == $user->password){ // Jika password yang diinput sama dengan password yang didatabase
+			if(password_verify($password, $hash)){ // Jika password yang diinput sama dengan password yang didatabase
 				$session = array(
 					'authenticated'=>true, // Buat session authenticated dengan value true
 					'email'=>$user->username,  // Buat session username
@@ -37,7 +40,8 @@ class Auth extends CI_Controller {
 				$this->session->set_userdata($session); // Buat session sesuai $session
 				redirect('page/welcome'); // Redirect ke halaman welcome
 			}else{
-				$this->session->set_flashdata('message', 'Password salah'); // Buat session flashdata
+			 
+				$this->session->set_flashdata('message', 'Password salah '); // Buat session flashdata
 				redirect('auth'); // Redirect ke halaman login
 			}
 		}

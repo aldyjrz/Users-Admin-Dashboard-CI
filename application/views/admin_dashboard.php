@@ -66,7 +66,7 @@
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="<?=base_url('users/add_admin')?>" class="small-box-footer">Click Here <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="<?=base_url('registers/add_admin')?>" class="small-box-footer">Click Here <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

@@ -28,6 +28,7 @@
 		if($this->session->flashdata('message')){ // Jika ada
 			echo $this->session->flashdata('message'); // Tampilkan pesannya
 		}
+		 
 		?>
 	</div>
 
